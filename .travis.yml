@@ -1,4 +1,3 @@
-language: generic
 sudo: required
 services:
     - docker
@@ -7,5 +6,5 @@ before_install:
     - docker build -t noreallyimfine/docker-react -f Dockerfile.dev .
 
 script:
-    - docker run -e CI=true noreallyimfine/docker-react npm run test
+    - docker run noreallyimfine/docker-react npm run test -- --coverage
 
